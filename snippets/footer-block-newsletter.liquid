@@ -1,0 +1,84 @@
+<div class="newsletter newsletter-footer-{{block.settings.type}}" {{ block.shopify_attributes }}>
+  {%- if block.settings.footer_newsletter_heading != '' -%}
+  <h4 class="title">{{block.settings.footer_newsletter_heading}}</h4>
+  <div class="strip-line"></div>
+  {%- endif -%}
+  <div class="clearfix default-newsletter">
+    {%- if block.settings.footer_newsletter_caption != '' -%}<p>{{block.settings.footer_newsletter_caption}}</p>{%- endif -%}
+    {% comment %}
+    {%- if settings.popup_mailchimp_action != '' -%}
+    <form action="{{settings.popup_mailchimp_action}}" method="post" class="mailing-form" name="mc-embedded-subscribe-form" target="_blank">
+      <div class="group-input">      
+        <input placeholder="{{'general.footer.mailchimp.email_address' | t}}" type="email" required="required" name="EMAIL" class="email" />
+        <button type="submit" class="footer-button subscribe">{{'general.footer.mailchimp.subscribe_button' | t}}</button>
+      </div>
+    </form>
+    {%- endif -%}
+     {% endcomment %}
+    <div class="content footer_form"> 
+       <form action="https://app.convertkit.com/forms/1094842/subscriptions" 
+            class="newsletter seva-form formkit-form" method="post" data-sv-form="1094842"
+            data-uid="5894b6840b" data-format="inline" data-version="5" 
+            data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:null,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:null,&quot;devices&quot;:null,&quot;show_once_every&quot;:null},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;custom_content&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:null,&quot;trigger&quot;:null,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:null,&quot;devices&quot;:null,&quot;show_once_every&quot;:null},&quot;sticky_bar&quot;:{&quot;display_in&quot;:null,&quot;trigger&quot;:null,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:null,&quot;devices&quot;:null,&quot;show_once_every&quot;:null}},&quot;version&quot;:5}"
+            min-width="400 500 600 700 800" style="/*background-color: rgb(249, 250, 251); border-radius: 4px;*/">
+        <div class="formkit-background" style="opacity: 0.2;"></div>
+        <div data-style="minimal"><ul class="formkit-alert formkit-alert-error" data-element="errors" 
+        data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+		<div class="formkit-field"><input class="formkit-input" aria-label="First Name" name="fields[first_name]" placeholder="First Name" type="text" ></div>
+		
+          <div class="formkit-field"><input class="email formkit-input" name="email_address" placeholder="{{'general.mailchimp_popup.enter_your_email' | t}}" required="" type="email"></div>
+		  
+          
+		  
+         </div>
+		  <button data-element="submit" class="btn subscribe formkit-submit formkit-submit" style="background-color: rgb(255, 255, 255); border-radius: 25px; color: rgb(0, 0, 0); font-weight: 400;">
+            <div class="formkit-spinner"><div></div><div></div><div></div></div><span>Subscribe</span></button></div>
+
+    <p id="show_text" class="formkit-alert formkit-alert-success"  style="display:none;">girlplussports10</p>
+  </form>
+      
+       {% comment %}
+      {%- form 'contact' -%}
+      {%- if form.posted_successfully? -%}
+      <div class="success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        Your comment was posted successfully! Thank you!
+      </div>
+      {%- endif -%}
+
+      {%- if form.errors -%}
+      <div class="warning">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        {{form.errors | default_errors}}
+      </div>
+      {%- endif -%}
+      <div class="group-input">
+        <input class="email" required="required" type="email" id="email" class="form-control" placeholder="{{'general.footer.mailchimp.email_address' | t}}" value="{%- if form.email -%}{{form.email}}{%- elsif customer -%}{{customer.email}}{%- endif -%}" name="contact[email]" />
+        <button type="submit" class="footer-button subscribe">{{'general.footer.mailchimp.subscribe_button' | t}}</button>
+      </div>
+      {%- endform -%}
+         {% endcomment %}
+    </div> 
+    
+  </div>
+</div>
+
+<style>
+ .footer ul{padding:0 !important;}
+.content.footer_form .seva-fields.formkit-fields {
+    display: block;
+}
+.content.footer_form .seva-fields.formkit-fields input {
+    background: #161616 !important;
+    width: 100%;
+    padding: 0 0 0 10px !important;
+    border-radius: 3px;
+    height: 45px;
+  max-width:100% !important
+}
+.content.footer_form .btn.subscribe {
+    border-radius: 3px !important;
+    width: 100%;
+    margin: 20px 0 0;
+}
+</style>

@@ -1,0 +1,53 @@
+/* FASTOR V3.2.1 - CHANGE HOMEPAGE LOOK SLIGHTLY */
+.roarlookbook .hotspot {
+  background:#d9121f!important;
+}
+.custom-widget .img-wrapper {
+  display:block;
+  line-height:0;
+}
+.advanced-grid.categories-wall > div > div.container:first-child {
+  padding:0!important;
+}
+.categories-wall .category-wall .image img {
+  width:100%;
+  margin-top:20px;
+}
+#popup-mailchimp.popup.style-bright .content { 
+    display: none;
+}
+.tpro-wrapper {
+    background-color: #333;
+}
+#popup-mailchimp.popup.style-bright {
+    background-size: auto; 
+}
+#popup-mailchimp.popup.style-bright:before {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, .3);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+#popup-mailchimp.popup.style-bright .dont-show-label,
+.popup .newsletter { 
+    z-index: 9;
+    position: relative;
+}
+html.responsive.nprogress-done {
+    padding-bottom: 0 !important;
+}
+div#rich-banner-1571228456513-0 {
+    background-position: unset !important;
+}
+.rich-banner-wrapper div#rich-banner-1571229026049 {
+    background-position: inherit !important;
+}
+.row.categories-wall div:nth-child(3n+1) {
+    clear: both;
+}
+iframe#admin-bar-iframe {
+    display: none;
+}

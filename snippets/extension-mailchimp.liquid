@@ -1,0 +1,123 @@
+
+{%- if settings.popup_mailchimp_show -%}
+<div id="popup-mailchimp" style="background-color:{{settings.popup_mailchimp_bgc}}!important" class="{{settings.popup_mailchimp_style}} popup mfp-hide{%- if settings.popup_mailchimp_sb -%}{{' '}}hidden-xs1{%- endif -%}">
+  {%- capture mailchimpHeading -%}{{'general.mailchimp_popup.heading_html' | t}}{%- endcapture -%}
+  {%- if mailchimpHeading != '' -%}
+  <h4>{{mailchimpHeading}}</h4>
+  {%- endif -%}
+  {%- capture mailchimpContent -%}{{'general.mailchimp_popup.content_html' | t}}{%- endcapture -%}
+  {%- if mailchimpContent != '' -%}
+  <div class="content">{{mailchimpContent}}</div>
+  {%- endif -%}
+  {% comment %}
+ 
+  <form id="mc-form" class="newsletter" action="{{settings.popup_mailchimp_action}}" method="post" name="mc-embedded-subscribe-form" target="_blank">
+    <input id="mc-email" class="email {%if settings.popup_mailchimp_bg == false%}more-white{%endif%}" type="email" name="EMAIL" placeholder="{{'general.mailchimp_popup.enter_your_email' | t}}" required="required" />
+    <button id="mc-submit" class="btn subscribe" type="submit">{{'general.mailchimp_popup.join_us' | t}}</button>
+    <label for="mc-email"></label>
+  </form>
+   {% endcomment %}
+      <form action="https://app.convertkit.com/forms/1094842/subscriptions" 
+            class="newsletter seva-form formkit-form" method="post" data-sv-form="1094842"
+            data-uid="5894b6840b" data-format="inline" data-version="5" 
+            data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:null,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:null,&quot;devices&quot;:null,&quot;show_once_every&quot;:null},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;custom_content&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:null,&quot;trigger&quot;:null,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:null,&quot;devices&quot;:null,&quot;show_once_every&quot;:null},&quot;sticky_bar&quot;:{&quot;display_in&quot;:null,&quot;trigger&quot;:null,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:null,&quot;devices&quot;:null,&quot;show_once_every&quot;:null}},&quot;version&quot;:5}"
+            min-width="400 500 600 700 800" style="/*background-color: rgb(249, 250, 251); border-radius: 4px;*/">
+        <div class="formkit-background" style="opacity: 0.2;"></div>
+        <div data-style="minimal"><ul class="formkit-alert formkit-alert-error" data-element="errors" 
+        data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+		<div class="formkit-field"><input class="formkit-input" aria-label="First Name" name="fields[first_name]" placeholder="First Name" type="text" ></div>
+		
+          <div class="formkit-field"><input class="email formkit-input" name="email_address" placeholder="{{'general.mailchimp_popup.enter_your_email' | t}}" required="" type="email"></div>
+		  
+          
+		  
+         </div>
+		  <button data-element="submit" class="btn subscribe formkit-submit formkit-submit" style="background-color: rgb(255, 255, 255); border-radius: 25px; color: rgb(0, 0, 0); font-weight: 400;">
+            <div class="formkit-spinner"><div></div><div></div><div></div></div><span>Subscribe</span></button></div>
+
+    <p id="show_text" class="formkit-alert formkit-alert-success"  style="display:none;">girlplussports10</p>
+  </form>
+  
+  {%- if settings.popup_mailchimp_expire == '0' -%}
+  <div class="dont-show-label">
+    <label>
+      <input type="checkbox" class="dont-show-me" />
+      <span>{{'general.mailchimp_popup.dont_show_again' | t}}</span>
+    </label>
+  </div>
+  {%- endif -%}
+</div>
+{%- endif -%}
+
+   <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+
+
+<style>
+  .dont-show-label{
+  width:100%;
+    float:left;
+  }
+div#popup-mailchimp {
+    padding: 50px 50px 40px;
+}
+div#popup-mailchimp h4 {
+    text-align: center;
+}
+div#popup-mailchimp h4 br {
+    display: none;
+}
+#popup-mailchimp.popup.style-bright button.mfp-close {
+    background: #000;
+    font-size: 24px;
+    font-weight: normal;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    top: 10px;
+    line-height: 31px;
+}
+div#popup-mailchimp form {
+    padding: 0;
+}
+div#popup-mailchimp .seva-fields.formkit-fields input {
+    width: 100%;
+    border-radius: 4px;
+    margin: 0 0 20px 0 !important;
+    background: rgba(0, 0, 0, 0.62) !important;
+}
+div#popup-mailchimp {
+    background-size: cover !important;
+    border-radius: 6px !important;
+    overflow: hidden;
+}
+div#popup-mailchimp .seva-fields.formkit-fields {
+    display: block;
+}
+
+div#popup-mailchimp button.btn.subscribe {
+    min-width: 50%;
+    margin-left: 1px;
+    float: left;
+    margin-right: 17px;
+    border-radius: 4px !important;
+}
+@media screen and (max-width: 768px) {
+div#popup-mailchimp h4 {
+    text-align: center;
+    font-size: 28px !important;
+    line-height: 36px !important;
+    margin: 30px 0 0 0 !important;
+    padding-bottom: 0 !important;
+}
+div#popup-mailchimp h4 br {
+    display: none;
+}
+div#popup-mailchimp {
+    padding: 20px !important;
+}
+div#popup-mailchimp button.btn.subscribe {
+    width: 100%;
+    margin: 0 0 10px;
+}
+}
+</style>
